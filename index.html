@@ -141,11 +141,99 @@
         </a>
     </div>
   </section>
-
   <footer>
     © 2025 Alvian Nurhakim | Universitas Negeri Jakarta
   </footer>
-
   <script src="script.js"></script>
+  <script>
+  const API_URL = "https://66f5dd2d436827ced09a2287.mockapi.io/experience";
+
+  // ======= GET (Tampilkan Data) =======
+  async function getExperience() {
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      const container = document.querySelector('.research-container');
+      container.innerHTML = ''; // hapus isi sebelumnya
+
+      data.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'research-card';
+        card.innerHTML = `
+          <div class="research-text">
+            <h3>${item.title}</h3>
+            <h4>${item.position}</h4>
+            <p>${item.description}</p>
+            <a href="${item.link}" target="_blank" class="btn-detail">Lihat Detail</a>
+          </div>
+          <div class="research-image">
+            <img src="${item.image}" alt="${item.title}">
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    } catch (err) {
+      console.error('Gagal mengambil data:', err);
+    }
+  }
+
+  // ======= POST (Tambah Data) =======
+  async function addExperience() {
+    const newExp = {
+      title: "Pengalaman Baru",
+      position: "Posisi Baru",
+      description: "Deskripsi singkat pengalaman ini...",
+      image: "https://via.placeholder.com/300",
+      link: "https://instagram.com/"
+    };
+
+    try {
+      await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newExp)
+      });
+      alert("Data berhasil ditambahkan!");
+      getExperience();
+    } catch (err) {
+      console.error('Gagal menambah data:', err);
+    }
+  }
+
+  // ======= PUT (Edit Data) =======
+  async function updateExperience(id) {
+    const updatedExp = {
+      title: "Judul Diperbarui",
+      description: "Deskripsi sudah diperbarui..."
+    };
+
+    try {
+      await fetch(`${API_URL}/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedExp)
+      });
+      alert("Data berhasil diperbarui!");
+      getExperience();
+    } catch (err) {
+      console.error('Gagal memperbarui data:', err);
+    }
+  }
+
+  // ======= DELETE (Hapus Data) =======
+  async function deleteExperience(id) {
+    if (!confirm("Yakin ingin menghapus data ini?")) return;
+    try {
+      await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+      alert("Data berhasil dihapus!");
+      getExperience();
+    } catch (err) {
+      console.error('Gagal menghapus data:', err);
+    }
+  }
+
+  // Jalankan pertama kali saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', getExperience);
+  </script>
 </body>
 </html>
