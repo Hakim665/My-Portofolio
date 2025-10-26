@@ -12,7 +12,7 @@ const observer = new IntersectionObserver(entries => {
 animElements.forEach(el => observer.observe(el));
 
 // Base URL untuk API Backend
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL = "https://portofolio-alviannurhakim.vercel.app/api";
 
 // ========== FUNGSI UNTUK PROFIL ==========
 
