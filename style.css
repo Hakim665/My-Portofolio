@@ -300,16 +300,29 @@ section {
 
 .contact h2 {
   color: #facc15;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  gap: 40px 80px; /* jarak baris | jarak kolom */
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto; /* biar di tengah */
 }
 
 .socials a {
-  display: inline-block;
-  margin: 0 15px;
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
   color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
   text-decoration: none;
-  transition: 0.3s;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .socials a:hover {
