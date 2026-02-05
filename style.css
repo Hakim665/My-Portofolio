@@ -360,11 +360,14 @@ footer {
 }
 
 .socials a img {
-  width: 28px;
-  height: 28px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   vertical-align: middle;
   transition: transform 0.3s;
+  background-color: white;
+  padding: 10px;
+  border-radius: 50%;
 }
 
 .socials a:hover img {
