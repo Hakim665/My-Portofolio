@@ -314,14 +314,16 @@ section {
 }
 
 .socials a {
-  display: flex;
+  display: grid;
+  grid-template-columns: 60px auto; /* ikon | teks */
   align-items: center;
-  justify-content: center;
-  gap: 15px;
+  column-gap: 20px;
+
   color: #fff;
   font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;
+
   transition: transform 0.3s, color 0.3s;
 }
 
