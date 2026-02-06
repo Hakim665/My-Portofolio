@@ -396,16 +396,21 @@ footer {
 /* Tambahan responsif khusus mobile */
 @media (max-width: 768px) {
   .socials {
-    grid-template-columns: 1fr; /* 🔥 jadi 1 kolom */
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* 🔥 jadi 1 kolom */
+    gap: 30px 20px;
+    justify-items: center;
   }
 
   .socials a {
+    display: flex;
+    align-items: center;
     justify-content: center; /* ikon + teks center */
     width: 100%;
-    max-width: 260px;
+    max-width: 160px;
+    gap: 10px;
+    text-align: center;
   }
-  
+
   .home {
     padding-top: 40px;
     min-height:calc(100vh - 140px);
