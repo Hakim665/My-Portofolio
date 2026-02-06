@@ -506,4 +506,137 @@ footer {
     padding-top: 90px;
     min-height: calc(100vh - 90px);
   }
+
+  /* ===== CONTACT MODERN ===== */
+  .contact-modern {
+    background: #0f172a;
+    padding: 120px 10%;
+    color: #fff;
+  }
+
+  /* Judul */
+  .contact-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+  }
+
+  .contact-line {
+    width: 6px;
+    height: 50px;
+    background: #facc15;
+    border-radius: 10px;
+  }
+
+  .contact-header h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #facc15;
+  }
+
+  /* Deskripsi */
+  .contact-desc {
+    max-width: 650px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+  }
+
+  .contact-status {
+    color: #facc15;
+    font-weight: 600;
+    margin-bottom: 60px;
+  }
+
+  /* Cards */
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .contact-card {
+    background: linear-gradient(145deg, #020617, #111827);
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    transition: all 0.35s ease;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(250,204,21,0.15);
+  }
+
+  /* Icon */
+  .contact-card .icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  /* Accent lembut (tidak tabrakan) */
+  .icon.github {
+    background: rgba(148,163,184,0.15);
+  }
+
+  .icon.linkedin {
+    background: rgba(14,165,233,0.2);
+  }
+
+  .icon.instagram {
+    background: rgba(236,72,153,0.2);
+  }
+
+  .icon.email {
+    background: rgba(250,204,21,0.25);
+  }
+
+  /* Text */
+  .contact-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .contact-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .contact-modern {
+      padding: 100px 6%;
+    }
+
+    .contact-header h2 {
+      font-size: 1.8rem;
+    }
+
+    .contact-cards {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      padding: 22px;
+    }
+  }
 }
