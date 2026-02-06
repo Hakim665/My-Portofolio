@@ -6,17 +6,24 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* === VARIABEL TINGGI HEADER === */
+:root {
+  --header-height: 90px;
+}
+
 body {
   background-color: #0d1117;
   color: #fff;
   overflow-x: hidden;
+  padding-top: var(--header-height); /* 🔥 INI KUNCI UTAMA */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 header {
   width: 100%;
+  height: var(--header-height);
   position: fixed;
   top: 0;
   left: 0;
@@ -38,7 +45,6 @@ header h1 {
 
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -54,26 +60,28 @@ nav a:hover {
   color: #facc15;
 }
 
+/* ================= SECTION UMUM ================= */
 section {
-  scroll-margin-top: 90px;
+  scroll-margin-top: var(--header-height);
   padding: 120px 10%;
   min-height: 100vh;
 }
 
-/* Hero Section */
+/* ================= HERO ================= */
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80')
+    center / cover no-repeat;
   position: relative;
 }
 
 .home::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .home-content {
@@ -101,8 +109,8 @@ section {
   height: 280px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #fffffF;
-  box-shadow: 0 0 20px ffffff(250, 204, 21, 0.5);
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.5); /* FIXED */
 }
 
 .home h2 {
@@ -124,6 +132,7 @@ section {
   margin-bottom: 30px;
 }
 
+/* ================= BUTTON ================= */
 .btn {
   display: inline-block;
   background: #facc15;
@@ -140,173 +149,14 @@ section {
   transform: translateY(-3px);
 }
 
-/* Tentang Saya */
-.about {
-  background-color: #111827;
-}
-
-.about h2 {
-  color: #facc15;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.about p {
-  color: #ddd;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.about p + p {
-    color: #ddd;
-    margin-top: 15px;
-}
-
-.research {
-  background: #0f172a;
-  padding: 100px 10%;
-}
-
-.research h2 {
-  color: #facc15;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.research-container {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
-
-.research-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.research-card.reverse {
-  flex-direction: row-reverse;
-}
-
-.research-text {
-  flex: 1;
-  color: #ddd;
-}
-
-.research-text h3 {
-  font-size: 1.4rem;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.research-text h4 {
-  font-size: 1rem;
-  color: #facc15;
-  margin-bottom: 15px;
-}
-
-.research-text p {
-  line-height: 1.7;
-  margin-bottom: 25px;
-  text-align: justify;
-}
-
-.btn-detail {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #0ea5e9;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
-  font-weight: 600;
-}
-
-.btn-detail:hover {
-  background: #38bdf8;
-  transform: translateY(-3px);
-}
-
-.research-image {
-  flex: 1;
-  text-align: center;
-}
-
-.research-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.research-image img:hover {
-  transform: scale(1.05);
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-  .research-card, .research-card.reverse {
-    flex-direction: column;
-  }
-  .research-image img {
-    max-width: 100%;
-  }
-}
-
-
-/* Skills */
-.skills {
-  background: #111827;
-}
-
-.skills h2 {
-  color: #facc15;
-  margin-bottom: 40px;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: center;
-}
-
-.skill-box {
-  background: #1f2937;
-  padding: 30px;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.skill-box h3 {
-  color: #facc15;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-}
-
-.skill-box ul {
-  list-style: disc;
-  margin-left: 20px;
-  line-height: 1.7;
-  color: #ddd;
-}
-
-/* Kontak */
+/* ================= CONTACT ================= */
 .contact {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #0f172a;
-  justify-content: center; /* vertikal tengah */
-  align-items: center;     /* horizontal tengah */
   text-align: center;
 }
 
@@ -320,123 +170,15 @@ section {
   flex-direction: column;
   gap: 35px;
   align-items: center;
-  justify-content: center; /* grid tepat di tengah */
 }
 
 .socials a {
   display: flex;
   align-items: center;
   gap: 15px;
-  width: 100%;
-  max-width: 260px;
+  width: 260px;
   justify-content: center;
 
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 500;
-  text-decoration: none;
-
-  transition: transform 0.3s, color 0.3s;
-}
-
-.socials a:hover {
-  color: #facc15;
-  transform: translateY(-3px);
-}
-
-h2 {
-    font-size: 1.6rem;
-  }
-
-/* Animasi */
-.scroll-animate {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
-}
-
-.scroll-animate.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Footer */
-footer {
-  background: #0b0f17;
-  text-align: center;
-  padding: 20px;
-  color: #777;
-  font-size: 0.9rem;
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-  header { padding: 15px 25px; flex-direction: column; }
-  nav a { margin: 10px;
-  font-size: 0.9rem;}
-  section { padding: 100px 5%; }
-  .skills-container { flex-direction: column; align-items: center; }
-}
-
-/* Tambahan responsif khusus mobile */
-@media (max-width: 768px) {
-  section{
-    scroll-margin-top: 90px;}
-  .socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
-  }
-
-  .socials a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-
-    width: 100%;
-    max-width: 260px;
-
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .home {
-    padding-top: 40px;
-    min-height:calc(100vh - 140px);
-  }
-  /* Cegah geser ke samping */
-  html, body {
-    overflow-x: hidden;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-  /* Navigasi */
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    font-size: 0.9rem;
-  }}
-
-/* === Gaya Ikon Kontak === */
-.socials a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 20px;
   color: #fff;
   font-size: 1.1rem;
   font-weight: 500;
@@ -447,20 +189,56 @@ footer {
 .socials a img {
   width: 44px;
   height: 44px;
-  object-fit: contain;
-
   background: #fff;
   border-radius: 50%;
   padding: 8px;
+}
 
-  justify-self: center; /* ikon pas di tengah kolom */
+.socials a:hover {
+  color: #facc15;
+  transform: translateY(-4px);
 }
 
 .socials a:hover img {
   transform: scale(1.15);
 }
 
-.socials a:hover {
-  color: #facc15;
-  transform: translateY(-4px);
+/* ================= FOOTER ================= */
+footer {
+  background: #0b0f17;
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 25px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  body {
+    padding-top: 140px; /* header mobile lebih tinggi */
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 10px;
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 100px 5%;
+  }
+
+  .home h1 {
+    font-size: 2.2rem;
+  }
 }
