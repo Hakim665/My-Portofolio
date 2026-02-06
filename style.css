@@ -12,6 +12,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--header-height);
 }
 
 /* Header */
@@ -28,6 +29,7 @@ header {
   align-items: center;
   z-index: 100;
   border-bottom: 1px solid #222;
+  height: var(--header-height);
 }
 
 header h1 {
