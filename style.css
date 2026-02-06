@@ -36,6 +36,12 @@ header h1 {
   font-weight: 700;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 nav a {
   margin-left: 25px;
   color: #fff;
@@ -310,8 +316,8 @@ section {
 
 .socials {
   display: grid;
-  grid-template-columns: repeat(2, 260px); /* 2 kolom */
-  gap: 40px 80px; /* jarak baris | jarak kolom */
+  grid-template-columns: 1fr;
+  gap: 30px; /* jarak baris | jarak kolom */
   justify-content: center;
   align-items: center;
   max-width: 600px;
@@ -327,6 +333,7 @@ section {
   grid-template-columns: 60px auto; /* ikon | teks */
   align-items: center;
   column-gap: 20px;
+  justify-content: center;
 
   color: #fff;
   font-size: 1.1rem;
@@ -341,6 +348,10 @@ section {
   color: #facc15;
   transform: translateY(-3px);
 }
+
+h2 {
+    font-size: 1.6rem;
+  }
 
 /* Animasi */
 .scroll-animate {
@@ -370,6 +381,31 @@ footer {
   section { padding: 100px 5%; }
   .skills-container { flex-direction: column; align-items: center; }
 }
+
+/* Tambahan responsif khusus mobile */
+@media (max-width: 768px) {
+
+  /* Cegah geser ke samping */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Navigasi */
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }}
 
 /* === Gaya Ikon Kontak === */
 .socials a {
