@@ -101,7 +101,7 @@ section {
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #fffffF;
-  box-shadow: 0 0 20px ffffff(250, 204, 21, 0.5);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
 }
 
 .home h2 {
@@ -315,31 +315,25 @@ section {
 }
 
 .socials {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px; /* jarak baris | jarak kolom */
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto; /* biar di tengah */
-  row-gap: 40px;
-  column-gap: 120px;
-
   justify-content: center; /* grid tepat di tengah */
 }
 
 .socials a {
-  display: grid;
-  grid-template-columns: 60px auto; /* ikon | teks */
+  display: flex;
   align-items: center;
-  column-gap: 20px;
+  gap: 15px;
+  width: 100%;
+  max-width: 260px;
   justify-content: center;
 
   color: #fff;
   font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;
-  text-align: left;
 
   transition: transform 0.3s, color 0.3s;
 }
