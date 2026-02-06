@@ -317,20 +317,20 @@ section {
 }
 
 .socials {
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 🔥 2 kolom desktop */
+  gap: 40px 120px; /* baris | kolom */
   align-items: center;
-  justify-content: center; /* grid tepat di tengah */
+  justify-items: center;
 }
 
 .socials a {
   display: flex;
   align-items: center;
-  gap: 15px;
-  width: 100%;
-  max-width: 260px;
-  justify-content: center;
+  gap: 16px;
+
+  width: 240px;
+  justify-content: flex-start;
 
   color: #fff;
   font-size: 1.1rem;
@@ -340,9 +340,23 @@ section {
   transition: transform 0.3s, color 0.3s;
 }
 
+.socials a img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+
+  background: #fff;
+  border-radius: 50%;
+  padding: 8px;
+}
+
 .socials a:hover {
   color: #facc15;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+}
+
+.socials a:hover img {
+  transform: scale(1.15);
 }
 
 h2 {
@@ -382,25 +396,16 @@ footer {
 /* Tambahan responsif khusus mobile */
 @media (max-width: 768px) {
   .socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 35px;
+    grid-template-columns: 1fr; /* 🔥 jadi 1 kolom */
+    gap: 30px;
   }
 
   .socials a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-
+    justify-content: center; /* ikon + teks center */
     width: 100%;
     max-width: 260px;
-
-    margin: 0 auto;
-    text-align: center;
   }
-
+  
   .home {
     padding-top: 40px;
     min-height:calc(100vh - 140px);
