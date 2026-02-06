@@ -55,6 +55,7 @@ nav a:hover {
 }
 
 section {
+  scroll-margin-top: 90px;
   padding: 120px 10%;
   min-height: 100vh;
 }
@@ -379,7 +380,8 @@ footer {
 
 /* Tambahan responsif khusus mobile */
 @media (max-width: 768px) {
-
+  section{
+    scroll-margin-top: 90px;}
   .socials {
     display: flex;
     flex-direction: column;
@@ -409,6 +411,9 @@ footer {
     overflow-x: hidden;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
   /* Navigasi */
   nav {
     display: flex;
